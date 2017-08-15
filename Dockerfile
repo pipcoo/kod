@@ -17,8 +17,8 @@ RUN set -x &&\
 	useradd www-data &&\
     chown -R www-data:www-data /var/www/html &&\
     apt-get purge -y wget unzip && apt-get -y autoremove && apt-get clean &&\
-    rm -f /tmp/kodexplorer${kodver}.zip
+    rm -f /tmp/kodexplorer${kodver}.zip &&\
+    sed -i "s/	Options Indexes FollowSymLinks/	Options -Indexes FollowSymLinks/g" /etc/apache2/apache2.conf 
 
 EXPOSE 80
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
-   
