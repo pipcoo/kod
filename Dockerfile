@@ -5,13 +5,13 @@ MAINTAINER pipcoo <pipcoo@pipcoo.com>
 #FROM php:5.4-apache
 #ADD sources.list /etc/apt/sources.list
 # Install modules
-ENV kodver=3.46
+ENV kodver=4.24
 RUN set -x &&\
     apt-get update &&\
 	apt-get install -y php5 php5-gd &&\
 	apt-get install -y wget unzip &&\
 	sed -i "1i DirectoryIndex index.php index.html" /etc/apache2/apache2.conf &&\
-	wget -P /tmp/ http://static.kalcaddle.com/update/download/kodexplorer${kodver}.zip &&\
+	wget -P /tmp/ http://static.kodcloud.com/update/download/kodexplorer${kodver}.zip &&\
 	unzip /tmp/kodexplorer${kodver}.zip -d /var/www/html &&\
 	userdel www-data &&\
 	useradd www-data &&\
