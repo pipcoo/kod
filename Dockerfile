@@ -1,11 +1,11 @@
 #Version 1.0.0
 FROM debian:jessie 
-MAINTAINER pipcoo <pipcoo@pipcoo.com>
+MAINTAINER pipcoo <blcat@hotmail.com>
 
 #FROM php:5.4-apache
 #ADD sources.list /etc/apt/sources.list
 # Install modules
-ENV kodver=4.37
+ENV kodver=4.40
 RUN set -x &&\
     apt-get update &&\
 	apt-get install -y php5 php5-gd &&\
